@@ -3,8 +3,57 @@
 
     </head>
     <body>
-        Hallo iedereen!
+       
         <script>
+
+    var zoekGetal, i;
+
+    // Hij maakt 2 tabellen aan. 1 tabel is voor het getal dat de persoon wil zoeken en in tabel 2 staan de hoeveelheid kolommen met getallen.
+    var getallenRij = new Array(5);
+
+    // Hij maakt een tabel aan met 5 kolommen met de titel "getallenRij".
+    for (i = 0; i <= 4; i++) {
+        getallenRij[i] = Math.floor(Math.random() * 100);
+
+        // door deze loop kiest het programma 5 verschillende getallen tussen 0 en 100 die in de tabel "getallenRij" komen te staan.
+    }
+
+    // Nadat hij 5 keer een random getal heeft gekozen tussen 0 en 100 zit de tabel vol en gaat dus naar de done kant.
+    window.alert("Welk getal wil je zoeken? ");
+
+    // In de console wordt gevraagd: "Welk getal wil je zoeken?".
+    zoekGetal = Number(window.prompt('Enter a value for zoekGetal'));
+
+    // Nu kan je je getal invoeren bij de console die je gekozen hebt.
+    i = 0;
+
+    // In de 2e tabel genaamd "I", gaat I dus weer naar 0.
+    while (getallenRij[i] != zoekGetal && i < 4) {
+        i = i + 1;
+
+        // De Whilelus zorgt ervoor dat het programma gaat zoeken naar het gekozen getal die je hebt ingevoerd in de console. Zo gaat hij kijken naar kolom 0 tm 4 of het gekozen getal erin staat.
+        // De formule I= I + 1 houdt in dat na 0 het getal dus +1 wordt. De formule wordt dan: I= 0 + 1= 1. Zo gaat dat door totdat het programma bij 4 is aangekomen.
+    }
+
+    // Als het programma bij 4 is aangekomen verlaat hij de whilelus.
+    if (i == 4) {
+
+        // Als i 4 is gaat hij naar de true kant.
+        if (getallenRij[i] == zoekGetal) {
+            window.alert(zoekGetal.ToString() + " staat op plek " + i);
+
+            // Als het zoekgetal erin staat komt er in de console te staan: " Uw zoekgetal staat op plek ..."
+        } else {
+            window.alert("Getal niet gevonden.");
+
+            // Als het zoekgetal er niet instaat gaat hij naar de falsekant en wordt er in de console gezegd:"Getal niet gevonden."
+        }
+    } else {
+        window.alert(zoekGetal.ToString() + " staat op plek " + i);
+
+        // Als het getal in de random getallenrij voorkomt gaat hij naar de false kant en wordt er in de console gezegd: "uw zoekgetal staat op plek..."
+    }
+
 
         </script>
     </body>
